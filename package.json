@@ -2,8 +2,9 @@
   "name": "njs101x_assignment1_phuongnhfx13282-funix.edu.vn",
   "version": "1.0.0",
   "description": "NJS101x_Assignment1_phuongnhFX13282-funix.edu.vn",
-  "main": "HR-app.js",
+  "main": "src/HR-app.js",
   "scripts": {
+    "start": "nodemon src/HR-app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/nguyenphuong13th/NJS101x_Assignment1_phuongnhFX13282-funix.edu.vn/issues"
   },
-  "homepage": "https://github.com/nguyenphuong13th/NJS101x_Assignment1_phuongnhFX13282-funix.edu.vn#readme"
+  "homepage": "https://github.com/nguyenphuong13th/NJS101x_Assignment1_phuongnhFX13282-funix.edu.vn#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
+  }
 }
