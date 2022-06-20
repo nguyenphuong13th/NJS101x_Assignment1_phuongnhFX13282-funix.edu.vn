@@ -4,7 +4,8 @@
   "description": "NJS101x_Assignment1_phuongnhFX13282-funix.edu.vn",
   "main": "src/HR-app.js",
   "scripts": {
-    "start": "nodemon src/HR-app.js",
+    "start": "nodemon HR-app.js",
+    "watch":"node-sass --watch resources/scss/ --output public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "express": "^4.18.1",
-    "express-handlebars": "^6.0.6"
+    "express-handlebars": "^6.0.6",
+    "node-sass": "^7.0.1"
   }
 }
