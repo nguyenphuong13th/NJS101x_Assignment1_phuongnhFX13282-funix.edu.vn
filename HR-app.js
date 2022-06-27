@@ -3,7 +3,8 @@ const path=require('path');
 const router = express.Router();;
 const app = express();
 const hbs = require('express-handlebars');
-
+const UserController = require('./controller/UserController')
+const route = require('./routes/index')
 app.use(express.static(path.join(__dirname, 'public')));// use static files in public folder
 //Template Engine
 app.engine('hbs', hbs.engine({
@@ -11,8 +12,8 @@ app.engine('hbs', hbs.engine({
   extname:'hbs'
 }));
 app.set('view engine', 'hbs');
-app.get('/',  (req, res)=> {
-  res.render('home');
-})
+//Routes
+route(app)
+
 
 app.listen(3000);
