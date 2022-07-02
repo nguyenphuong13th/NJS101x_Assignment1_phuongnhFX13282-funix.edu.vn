@@ -1,12 +1,27 @@
+const employees = require('../models/employees')
+
+
 class UserController{
     //Get/user
     index(req,res){
         res.render('user')
     }
-    //Get/user/:id
+    //Get/user/checkin
     checkIn(req,res){
-        res.render('checkin')
+        employees.find(function (err, employees) {
+            if(!err){
+                res.json(employees)
+                return
+            }
+            res.status(400).json({erroe:'Error'})
+          });
 
+    }
+    offline(req,res){
+        res.render('finish')
+    }
+    dayOff(req,res){
+        res.render('dayoff')
     }
 }
 

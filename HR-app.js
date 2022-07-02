@@ -5,6 +5,11 @@ const app = express();
 const hbs = require('express-handlebars');
 const UserController = require('./controller/UserController')
 const route = require('./routes/index')
+const db = require('./config/DB/index')
+
+//Connect DB
+db.connect()
+
 app.use(express.static(path.join(__dirname, 'public')));// use static files in public folder
 //Template Engine
 app.engine('hbs', hbs.engine({
