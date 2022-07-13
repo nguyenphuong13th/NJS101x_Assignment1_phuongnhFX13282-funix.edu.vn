@@ -1,5 +1,5 @@
 const employees = require('../models/employees')
-
+const {multipleMongooseToObject} =require('../ultil/mongoose')
 
 class UserController{
     //Get/user
@@ -7,14 +7,14 @@ class UserController{
         res.render('user')
     }
     //Get/user/checkin
-    checkIn(req,res){
-        employees.find(function (err, employees) {
-            if(!err){
-                res.json(employees)
-                return
-            }
-            res.status(400).json({erroe:'Error'})
-          });
+    checkIn(req,res,next){
+        employees.find({})
+        .then (employees=>{
+            console.log(employees)
+            res.render('checkin',
+                {employees:multipleMongooseToObject(employees)}
+            )})
+        .catch (next)
 
     }
     offline(req,res){

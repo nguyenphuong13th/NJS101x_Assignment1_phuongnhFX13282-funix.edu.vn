@@ -1,1 +1,23 @@
-<h1>Checkin screen</h1>
+<div class="row">
+        {{#each employees}}
+        <div class="col-lg-6">
+            <div class="card">
+                <img src="{{this.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{this.name}}</h5>
+                    <div class="user-status">
+                        <h6 class="user-status-text text-center"> <i class="fa-solid fa-circle" style="color:{{this.status.offline.color}}"></i> {{this.status.offline.text}}
+                        </h6>
+                    </div>
+                    <select class="form-select mt-3" aria-label="Default select example">
+                        <option value={{this.workPlace.company}}>{{this.workPlace.company}}</option>
+                        <option value={{this.workPlace.home}}>{{this.workPlace.home}}</option>
+                    </select>
+                    <div class="flex justify-content-center align-item-center" style="width:100%;">
+                        <button type="button" class="btn btn-success mt-3 text-align-center">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+</div>
