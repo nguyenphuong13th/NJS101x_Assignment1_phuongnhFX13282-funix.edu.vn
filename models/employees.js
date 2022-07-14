@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const empolyee = new Schema({
-    name: {type:String ,default:'Nguyễn Văn A'},
+    name: {type:String ,require:'true'},
+    password:{type:String,require:'true'},
     WorkPlace: {type:String},
     nested :{
         home:{type:String},
@@ -22,8 +23,9 @@ const empolyee = new Schema({
         },
     },
     image:{type:String},
-    createAt:{type:Date,default:Date.now},//date which document crated
-    updateAt:{type:Date,default:Date.now}//date which document updated
+
+  },{
+    timestamps : true, //higher 4.0
   });
 
   module.exports = mongoose.model('employee', empolyee);

@@ -17,6 +17,7 @@ class UserController{
         .catch (next)
 
     }
+
     offline(req,res){
         res.render('finish')
     }
