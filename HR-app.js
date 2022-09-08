@@ -7,14 +7,18 @@ const UserController = require('./controller/UserController')
 const route = require('./routes/index')
 const db = require('./config/DB/index')
 
+
+const bodyParser = require('body-parser');//importing body-parser module
+app.use(bodyParser.urlencoded({extended:true}));//using body-parser
 //Connect DB
-db.connect()
+db.connect()//connect to DB
 
 app.use(express.static(path.join(__dirname, 'public')));// use static files in public folder
 //Template Engine
 app.engine('hbs', hbs.engine({
   defaultLayout:'main',
-  extname:'hbs'
+  extname:'hbs',
+  isLoggined:false,
 }));
 app.set('view engine', 'hbs');
 //Routes

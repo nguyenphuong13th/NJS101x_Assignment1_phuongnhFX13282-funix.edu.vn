@@ -1,31 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const empolyee = new Schema({
-    name: {type:String ,require:'true'},
-    password:{type:String,require:'true'},
-    WorkPlace: {type:String},
-    nested :{
-        home:{type:String},
-        company:{type:String}
+  name: { type: String, require: "true" },
+  password: { type: String, require: "true" },
+  WorkPlace: {
+    home: { type: String, default: "Nhà" },
+    company: { type: String, default: "Công ty" },
+  },
+  status: {
+    online: {
+      text: { type: String, default: "working" },
+      color: { type: String, default: "green" },
     },
-    status: {type:Object},
-    nested:{
-        online:{type:Object},
-        nested:{
-          text:{type:String},
-          color:{type:String}
-        },
-        offline:{type:Object},
-        nested:{
-          text:{type:String},
-          color:{type:String}
-        },
+    offline: {
+      text: { type: String, default: "Off-working" },
+      color: { type: String, default: "red" },
     },
-    image:{type:String},
+  },
+  image: {
+    type: String,
+    default:
+      "https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg",
+  },
+  time: { type: Date, default: Date.now },
+});
 
-  },{
-    timestamps : true, //higher 4.0
-  });
-
-  module.exports = mongoose.model('employee', empolyee);
+module.exports = mongoose.model("employee", empolyee);

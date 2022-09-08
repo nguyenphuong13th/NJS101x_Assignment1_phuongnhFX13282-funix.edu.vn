@@ -6,18 +6,20 @@ class UserController{
     index(req,res){
         res.render('user')
     }
-    //Get/user/checkin
-    checkIn(req,res,next){
+    //Get/user/register
+    Register(req,res,next){
         employees.find({})
         .then (employees=>{
             console.log(employees)
-            res.render('checkin',
+            res.render('registerscreen',
                 {employees:multipleMongooseToObject(employees)}
             )})
         .catch (next)
 
     }
-
+    inOut(req,res){
+        res.render('check-in-screen/check-in-screen')
+    }
     offline(req,res){
         res.render('finish')
     }
