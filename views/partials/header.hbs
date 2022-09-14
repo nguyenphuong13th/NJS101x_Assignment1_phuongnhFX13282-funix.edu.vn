@@ -20,20 +20,10 @@
           </li>
         </ul>
         {{#if isLoggined}}
-          <h4>Welcome,{{employees.name}}</h4>
+          <h4 class="text-light">Welcome,{{employees.name}}</h4>
           <a href="/" class="btn btn-primary ms-2">
               Log out
           </a>
-        {{else}}
-          <!-- Button trigger modal Register -->
-          <a href="/register" class="btn btn-primary">
-            Register
-          </a>
-  <!-- Button trigger modal Log-in -->
-          <a href="/login" class="btn btn-primary ms-2">
-            Log In
-          </a>
-
         {{/if}}
       </div>
     </div>

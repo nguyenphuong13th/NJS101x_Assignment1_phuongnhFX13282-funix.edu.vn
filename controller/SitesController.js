@@ -3,7 +3,7 @@ const employees = require('../models/employees')
 class sitesController{
     //Get/user
     Index(req,res){
-        res.render('home')
+        res.render('login-input-screen')
     }
 
     //Get//Register
@@ -12,7 +12,7 @@ class sitesController{
     }
     //Post//store to add new user we shall store data added here
     Store(req,res,next){
-        console.log(req.body)
+        console.log(req.body.Covidstatus)
         const employee = new employees(req.body)
         employee.save()
             .then (() => res.redirect ('/')) //redirect to homepage after finish adding user successfully.
