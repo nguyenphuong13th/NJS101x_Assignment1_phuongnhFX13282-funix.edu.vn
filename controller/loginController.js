@@ -14,7 +14,7 @@ class loginController{
         }).lean()
         .then (employees=>{
             console.log(employees)
-            res.render( ('check-in-screen/check-in-screen'),{employees,isLoggined: true}
+            res.render( ('home'),{employees,isLoggined: true}
             )})
         .catch (next)
 

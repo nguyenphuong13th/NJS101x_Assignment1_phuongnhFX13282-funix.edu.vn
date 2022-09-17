@@ -1,13 +1,21 @@
-<h1>Login or Register here</h1>
-<form method="Post" action="/login/update">
-  <div class="mb-3">
-    <label for="name" class="form-label">Full Name</label>
-    <input type="text" class="form-control" name ='name'>
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <div>
+      <h1 class="mb-5">Login or Register here</h1>
+      <form method="Post" action="/login/log-in-ed">
+        <div class="mb-3 d-flex flex-column justify-content-center align-items-center">
+          <label for="name" class="mb-3">Full Name</label>
+          <input type="text" class="form-control" name ='name'>
+        </div>
+        <div class="mb-5 d-flex flex-column justify-content-center align-items-center">
+          <label for="password" class="mb-3">Password</label>
+          <input type="text" class="form-control" name="password">
+        </div>
+        <div class="d-flex justify-content-around align-items-center mt-5">
+          <button type="submit" class="btn btn-primary" style="width:30%">Login</button>
+          <a href="/register" class="btn btn-primary ms-3" style="width:30%">Register</a>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="text" class="form-control" name="password">
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-  <a href="/register" class="btn btn-primary">Register</a>
-</form>
+</div>

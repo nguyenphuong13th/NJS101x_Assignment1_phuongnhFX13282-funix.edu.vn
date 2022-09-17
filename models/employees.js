@@ -1,45 +1,39 @@
+const { text } = require("body-parser");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const empolyee = new Schema({
+  employeeID:{type:Number,require:"true"},
   name: { type: String, require: "true" },
+  dateofbirth : {type: Date,require:"true"},
+  placeofbirth:{type:String,require:"true"},
+  phoneNo:{type : Number, require:"true"},
   password: { type: String, require: "true" },
   title:{type : String,default:"Staff"},
   WorkPlace: {
     home: { type: String, default: "Nhà" },
     company: { type: String, default: "Công ty" },
   },
-  status: {
+  workingstatus: {
     online: {
-      text: { type: String, default: "working" },
-      color: { type: String, default: "green" },
+      onlinetext: { type: String, default: "working" },
+      onlinecolor: { type: String, default: "green" },
     },
     offline: {
-      text: { type: String, default: "Off-working" },
-      color: { type: String, default: "red" },
+      offlinetext: { type: String, default: "Off-working" },
+      offlinecolor: { type: String, default: "red" },
     },
   },
-  image: {
+  avartaimage: {
     type: String,
     default:
       "https://upload.wikimedia.org/wikipedia/commons/5/50/User_icon-cp.svg",
   },
-  time: { type: Date, default: Date.now },
-  covidstatus:{
-    covidinfected:{type:String,default:"None",require:"true"},
-    covidvacinated:{type:String,default:"None"},
-    firstdose:{
-      date:{type:Date},
-      place:{type:String}
-    },
-    seconddose:{
-      date:{type:Date},
-      place:{type:String}
-    },
-    thirddose:{
-      date:{type:Date},
-      place:{type:String}
-    }
+  currenttime: { type: Date, default: Date.now },
+  covidinfo:{
+    covidstatus:{type:String},
+    covidinfected:{type:String,require:"true"},
+    covidvacinated:{type:String,require:"true"},
   }
 });
 
