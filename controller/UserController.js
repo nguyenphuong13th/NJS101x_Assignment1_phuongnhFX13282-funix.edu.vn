@@ -7,16 +7,16 @@ class UserController{
         res.render('user')
     }
     //Get/user/register
-    Register(req,res,next){
-        employees.find({})
-        .then (employees=>{
-            console.log(employees)
-            res.render('registerscreen',
-                {employees:multipleMongooseToObject(employees)}
-            )})
-        .catch (next)
+    // Register(req,res,next){
+    //     employees.find({})
+    //     .then (employees=>{
+    //         console.log(employees)
+    //         res.render('registerscreen',
+    //             {employees:multipleMongooseToObject(employees)}
+    //         )})
+    //     .catch (next)
 
-    }
+    // }
     inOut(req,res){
         res.render('check-in-screen/check-in-screen')
     }

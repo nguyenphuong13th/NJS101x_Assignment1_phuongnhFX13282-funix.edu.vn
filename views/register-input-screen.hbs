@@ -1,59 +1,69 @@
 <div class="container">
-  <div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="d-flex flex-column justify-content-center">
+    <h1 class="text-center">Register Form</h1>
     <form method="Post" action="/store">
-      <h1>Please Fill These Field</h1>
-      <div class="mb-3">
-        <label for="employeeID" class="form-label">Employee ID</label>
-        <input type="number" class="form-control" name ='employeeID'>
+      <div class="d-flex flex-column align-items-center">
+        <div class="d-flex">
+          <div class="d-flex flex-column justify-content-start align-items-center mt-5" style="width: 50%;">
+            <h3 class="text-center">Employee personal information</h3>
+            <div class="mb-3 mt-3">
+              <label for="employeeID" class="form-label">Employee ID</label>
+              <input type="number" class="form-control" name ='employeeID' style="width:100%;">
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" name ='name'>
+            </div>
+            <div class="mb-3">
+              <label for="dateofbirth" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" name ='dateofbirth'>
+            </div>
+            <div class="mb-3">
+              <label for="placeofbirth" class="form-label">Place of Birth</label>
+              <input type="text" class="form-control" name ='placeofbirth'>
+            </div>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" name ='title'>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="text" class="form-control" name="password">
+            </div>
+          </div>
+          <div class="d-flex flex-column justify-content-start align-items-center mt-5" style="width: 50%;">
+            <h3 class="text-center">Employee Covid-19 status</h3>
+            <div class="mb-3 mt-3">
+              <label for="covidstatus" class="form-label">Có Đang bị Covid</label>
+              <select class="form-select" aria-label="Default select example" name="covidstatus">
+                <option selected>---Open this select menu---</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="covidinfected" class="form-label">How many times did you infect?</label>
+              <select class="form-select" aria-label="Default select example" name="covidinfected">
+                <option selected>---Open this select menu---</option>
+                <option value="1 times">1 times</option>
+                <option value="2 times">2 times</option>
+                <option value="3 times">3 times</option>
+                <option value="more than 3 times">>3 times</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="covidvacinated" class="form-label">How many times did you vacinate?</label>
+              <select class="form-select" aria-label="Default select example" name="covidvacinated">
+                <option selected>---Open this select menu---</option>
+                <option value="1 times">1 times</option>
+                <option value="2 times">2 times</option>
+                <option value="3 times">3 times</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3" style="width:50%;">Register</button>
       </div>
-      <div class="mb-3">
-        <label for="name" class="form-label">Full Name</label>
-        <input type="text" class="form-control" name ='name'>
-      </div>
-      <div class="mb-3">
-        <label for="dateofbirth" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" name ='dateofbirth'>
-      </div>
-      <div class="mb-3">
-        <label for="placeofbirth" class="form-label">Place of Birth</label>
-        <input type="text" class="form-control" name ='placeofbirth'>
-      </div>
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" name ='title'>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="text" class="form-control" name="password">
-      </div>
-      <div class="mb-3">
-        <label for="covidstatus" class="form-label">Có Đang bị Covid</label>
-        <select class="form-select" aria-label="Default select example" name="covidstatus">
-          <option selected>---Open this select menu---</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="covidinfected" class="form-label">How many times did you infect?</label>
-        <select class="form-select" aria-label="Default select example" name="covidinfected">
-          <option selected>---Open this select menu---</option>
-          <option value="1 times">1 times</option>
-          <option value="2 times">2 times</option>
-          <option value="3 times">3 times</option>
-          <option value="more than 3 times">>3 times</option>
-        </select>
-      </div>
-      <div class="mb-3">
-        <label for="covidvacinated" class="form-label">How many times did you vacinate?</label>
-        <select class="form-select" aria-label="Default select example" name="covidvacinated">
-          <option selected>---Open this select menu---</option>
-          <option value="1 times">1 times</option>
-          <option value="2 times">2 times</option>
-          <option value="3 times">3 times</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Register</button>
     </form>
   </div>
 </div>

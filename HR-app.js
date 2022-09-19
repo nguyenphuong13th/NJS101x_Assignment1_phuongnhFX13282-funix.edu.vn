@@ -17,8 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));// use static files in p
 //Template Engine
 app.engine('hbs', hbs.engine({
   defaultLayout:'main',
-  extname:'hbs',
-  isLoggined:false,
+  extname:'hbs'
 }));
 app.set('view engine', 'hbs');
 //Routes
