@@ -66,25 +66,18 @@ class sitesController{
         console.log('This is ID'+' '+ req.body.employeeID)
         console.log('This is pass'+' '+ req.body.password)
         employees.findOne({
-            employeeID:req.body.employeeID,
-            password:req.body.password
-        }, function (err, employee) {
-            if (err){
-                console.log(err)
-            }
-            else{
-                console.log("Result : ", employee);
-            }
-        });
-        // .then((employee)=>{console.log (employee)})
-        // .catch((e)=> console.log(e))
-        // })
-        // if(employee == null){
-        //     return res.status(400).render('404')
-        // }
+            employeeID:req.body.employeeID
+        })
+        .then(employees=> {
+            console.log(employees)
+           res.render(('home'),{employees,isLoggined: true})
+         })
+         .catch(next)
         // try{
-        //     if(await bcrypt.compare(req.body.password,employee.password)){
+        //     if(bcrypt.compare(req.body.password,employee.password,function(err,result){
         //         res.render(('home'),{employee,isLoggined: true})
+        //     })){
+
         //     }else{
         //         res.render('404')
         //     }

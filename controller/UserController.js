@@ -17,8 +17,13 @@ class UserController{
     //     .catch (next)
 
     // }
-    inOut(req,res){
-        res.render('check-in-screen/check-in-screen')
+    inOut(req,res,next){
+        employees.find({})
+        .then(employees=>{
+            res.render('check-in-screen/check-in-screen',{employees:multipleMongooseToObject(employees)})
+        })
+        .catch(next)
+
     }
     offline(req,res){
         res.render('finish')

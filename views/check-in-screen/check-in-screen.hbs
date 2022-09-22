@@ -1,21 +1,46 @@
-<div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <img src="{{employees.avartaimage}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{employees.name}}</h5>
-                    <div class="user-status">
-                        <h6 class="user-status-text text-center"> <i class="fa-solid fa-circle" style="color:{{employees.workingstatus.offline.offlinecolor}}"></i> {{employees.workingstatus.offline.offlinetext}}
-                        </h6>
-                    </div>
-                    <select class="form-select mt-3" aria-label="Default select example">
-                        <option value={{employees.workPlace.company}}>home</option>
-                        <option value={{employees.workPlace.home}}>company</option>
-                    </select>
-                    <div class="flex justify-content-center align-item-center" style="width:100%;">
-                        <button type="button" class="btn btn-success mt-3 text-align-center">Submit</button>
-                    </div>
-                </div>
+<div class="container">
+  <div class="row pb-5">
+    {{#each employees}}
+      <div class="col-lg-4 mt-5">
+        <div class="card">
+          <img src="{{this.avartaimage}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title text-center">{{this.name}}</h5>
+            <h6 class="card-title text-center">{{this.title}}</h6>
+            <div class="user-status">
+              <h6 class="user-status-text text-center">
+                <i
+                  class="fa-solid fa-circle"
+                  style="color:{{this.workingstatus.offline.offlinecolor}}"
+                ></i>
+                {{this.workingstatus.offline.offlinetext}}
+              </h6>
             </div>
+            <select
+              class="form-select mt-3"
+              aria-label="Default select example"
+            >
+              <option value={{this.workPlace.company}}>Company</option>
+              <option value={{this.workPlace.home}}>Home</option>
+            </select>
+            <div
+              class="d-flex justify-content-around align-items-center"
+              style="width:100%;"
+            >
+              <button
+                type="button"
+                class="btn btn-success mt-3 text-align-center"
+                style="width:30%"
+              >Submit</button>
+              <button
+                type="button"
+                class="btn btn-success mt-3 text-align-center"
+                style="width:30%"
+              >Finish</button>
+            </div>
+          </div>
         </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
