@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row pb-5">
+  <div class="row pb-5 justify-content-center align-items-center">
     {{#each employees}}
-      <div class="col-lg-4 mt-5">
-        <div class="card">
-          <img src="{{this.avartaimage}}" class="card-img-top" alt="..." />
+      <div class="col-lg-3 mt-2 ">
+        <div class="card" style="height:350px">
+          <img src="{{this.avartaimage}}" class="card-img-top mt-3" alt="..." style="height:100px" />
           <div class="card-body">
             <h5 class="card-title text-center">{{this.name}}</h5>
             <h6 class="card-title text-center">{{this.title}}</h6>
@@ -30,12 +30,12 @@
               <button
                 type="button"
                 class="btn btn-success mt-3 text-align-center"
-                style="width:30%"
+                style="width:40%"
               >Submit</button>
               <button
                 type="button"
                 class="btn btn-success mt-3 text-align-center"
-                style="width:30%"
+                style="width:40%"
               >Finish</button>
             </div>
           </div>

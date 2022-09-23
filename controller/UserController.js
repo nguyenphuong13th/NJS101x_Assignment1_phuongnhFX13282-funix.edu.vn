@@ -17,6 +17,7 @@ class UserController{
     //     .catch (next)
 
     // }
+    //Find all user in database to pass to view handlebars
     inOut(req,res,next){
         employees.find({})
         .then(employees=>{
@@ -25,11 +26,17 @@ class UserController{
         .catch(next)
 
     }
-    offline(req,res){
-        res.render('finish')
+    personalinfo(req,res){
+        res.render('user-view-tab/personal-information')
     }
     dayOff(req,res){
-        res.render('dayoff')
+        res.render('user-view-tab/leave-holiday')
+    }
+    overtimeinfo(req,res){
+        res.render('user-view-tab/overtime-information')
+    }
+    covidinfo(req,res){
+        res.render('user-view-tab/covid-information')
     }
 }
 

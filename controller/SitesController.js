@@ -1,5 +1,6 @@
 const employees = require('../models/employees')
 const bcrypt = require('bcrypt')
+const {multipleMongooseToObject} =require('../ultil/mongoose')
 class sitesController{
     //Get/user
     Index(req,res){
@@ -59,20 +60,26 @@ class sitesController{
     Login(req,res){
         res.render('login-input-screen')
     }
+
     //Get/user/log-in-screen
 
     Update(req,res,next){
-        console.log(employees.employeeID)
-        console.log('This is ID'+' '+ req.body.employeeID)
-        console.log('This is pass'+' '+ req.body.password)
-        employees.findOne({
-            employeeID:req.body.employeeID
+        employees.find({})
+        .then(employees=>{
+            res.render('home',{employees:multipleMongooseToObject(employees)})
         })
-        .then(employees=> {
-            console.log(employees)
-           res.render(('home'),{employees,isLoggined: true})
-         })
-         .catch(next)
+        .catch(next)
+        // console.log(employees.employeeID)
+        // console.log('This is ID'+' '+ req.body.employeeID)
+        // console.log('This is pass'+' '+ req.body.password)
+        // employees.findOne({
+        //     employeeID:req.body.employeeID
+        // })
+        // .then(employees=> {
+        //     console.log(employees)
+        //    res.render(('home'),{employees,isLoggined: true})
+        //  })
+        //  .catch(next)
         // try{
         //     if(bcrypt.compare(req.body.password,employee.password,function(err,result){
         //         res.render(('home'),{employee,isLoggined: true})
