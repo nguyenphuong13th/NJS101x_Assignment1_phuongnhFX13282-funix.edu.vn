@@ -1,6 +1,6 @@
 const employees = require('../models/employees')
 const {multipleMongooseToObject} =require('../ultil/mongoose')
-
+const moment = require('moment')
 class UserController{
     //Get/user
     index(req,res){
@@ -26,17 +26,25 @@ class UserController{
         .catch(next)
 
     }
-    personalinfo(req,res){
-        res.render('user-view-tab/personal-information')
+    personalinfo(req,res,next){
+        employees.find({})
+        .then(employees=>{
+            res.render('user-tab-view/personal-information',{employees:multipleMongooseToObject(employees)})
+        })
+        .catch(next)
     }
     dayOff(req,res){
-        res.render('user-view-tab/leave-holiday')
+        res.render('user-tab-view/leave-holiday')
     }
     overtimeinfo(req,res){
-        res.render('user-view-tab/overtime-information')
+        res.render('user-tab-view/overtime-information')
     }
-    covidinfo(req,res){
-        res.render('user-view-tab/covid-information')
+    covidinfo(req,res,next){
+        employees.find({})
+        .then(employees=>{
+            res.render('user-tab-view/covid-information',{employees:multipleMongooseToObject(employees)})
+        })
+        .catch(next)
     }
 }
 

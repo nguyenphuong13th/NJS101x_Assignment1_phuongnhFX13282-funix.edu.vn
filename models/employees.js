@@ -10,6 +10,10 @@ const empolyee = new Schema({
   phoneNo:{type : Number, require:"true"},
   password: { type: String, require: "true" },
   title:{type : String,default:"Staff"},
+  salaryScale:{type:Number,require:'true'},
+  startDate:{type:Date,require:'true'},
+  department:{type:String,require:"true"},
+  annualLeave:{type:Number,require:"true"},
   WorkPlace: {
     home: { type: String, default: "Nhà" },
     company: { type: String, default: "Công ty" },
@@ -32,8 +36,14 @@ const empolyee = new Schema({
   currenttime: { type: Date, default: Date.now },
   covidinfo:{
     covidstatus:{type:String},
-    covidinfected:{type:String,require:"true"},
-    covidvacinated:{type:String,require:"true"},
+    covidinfected:{type:String},
+    covidvacinated:{type:String},
+    coviddose1type:{type:String,},
+    coviddose1takedate:{type:Date},
+    coviddose2type:{type:String},
+    coviddose2takedate:{type:Date},
+    coviddose3type:{type:String},
+    coviddose3takedate:{type:Date},
   }
 });
 

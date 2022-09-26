@@ -6,7 +6,7 @@ const hbs = require('express-handlebars');
 const UserController = require('./controller/UserController')
 const route = require('./routes/index')
 const db = require('./config/DB/index')
-
+const moment= require('moment')
 
 const bodyParser = require('body-parser');//importing body-parser module
 app.use(bodyParser.urlencoded({extended:true}));//using body-parser
@@ -17,7 +17,11 @@ app.use(express.static(path.join(__dirname, 'public')));// use static files in p
 //Template Engine
 app.engine('hbs', hbs.engine({
   defaultLayout:'main',
-  extname:'hbs'
+  extname:'hbs',
+  helpers:{
+    dateconverter:(date) => date? moment(date).format('DD-MMM-YYYY') : 'N/A'
+
+  }
 }));
 app.set('view engine', 'hbs');
 //Routes

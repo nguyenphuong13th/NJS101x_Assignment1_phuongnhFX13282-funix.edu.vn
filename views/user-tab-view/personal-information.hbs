@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row pb-5 justify-content-center align-items-center">
+    {{#each employees}}
+      <div class="col-lg-12 mt-2 ">
+        <div class="d-flex" style="width:100%">
+            <div class="col-lg-4">
+                <img src="{{this.avartaimage}}" class="card-img-top mt-3" alt="..."/>
+            </div>
+          <div class="card-body col-lg-8">
+            <h5 class="card-title text-left"> Employees ID: {{this.employeeID}}</h5>
+            <h5 class="card-title text-left"> Employees Name: {{this.name}}</h5>
+            <h5 class="card-title text-left">Employees DOB:{{dateconverter this.dateofbirth}}</h5>
+            <h5 class="card-title text-left">Employees Department:{{this.department}}</h5>
+            <h5 class="card-title text-left">Employees Title:{{this.title}}</h5>
+            <h5 class="card-title text-left">Employees Salary Scale:{{this.salaryScale}}</h5>
+            <h5 class="card-title text-left">Employees Start Date:{{dateconverter this.startDate}}</h5>
+            <h5 class="card-title text-left">Employees Annual Leave (days):{{this.annualLeave}}</h5>
+            <h5 class="card-title text-left"> Employees Image: {{this.avartaimage}}</h5>
+            <div
+              class="d-flex justify-content-around align-items-center"
+              style="width:100%;"
+            >
+              <button
+                type="button"
+                class="btn btn-success mt-3 text-align-center"
+                style="width:40%"
+              >Submit</button>
+              <button
+                type="button"
+                class="btn btn-success mt-3 text-align-center"
+                style="width:40%"
+              >Finish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <textarea class="check-in-out-infomation mt-2"></textarea>
+    {{/each}}
+  </div>
+</div>

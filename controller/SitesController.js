@@ -24,6 +24,10 @@ class sitesController{
                 phone:req.body.phone,
                 password:hashedPassword,
                 title:req.body.title,
+                salaryScale:req.body.salaryScale,
+                startDate:req.body.salaryScale,
+                department:req.body.department,
+                annualLeave:req.body.annualLeave,
                 workplace:{
                     home:req.body.home,
                     company:req.body.company
@@ -43,7 +47,14 @@ class sitesController{
                 covidinfo:{
                     covidstatus:req.body.covidstatus,
                     covidinfected:req.body.covidinfected,
-                    covidvacinated:req.body.covidvacinated
+                    covidvacinated:req.body.covidvacinated,
+                    coviddose1type:req.body.dose1type,
+                    coviddose1takedate:req.body.dose1takedate,
+                    coviddose2type:req.body.dose2type,
+                    coviddose2takedate:req.body.dose2takedate,
+                    coviddose3type:req.body.dose3type,
+                    coviddose3takedate:req.body.dose3takedate,
+
                 }
 
             })
@@ -63,7 +74,7 @@ class sitesController{
 
     //Get/user/log-in-screen
 
-    Update(req,res,next){
+    AfterLogin(req,res,next){
         employees.find({})
         .then(employees=>{
             res.render('home',{employees:multipleMongooseToObject(employees)})
