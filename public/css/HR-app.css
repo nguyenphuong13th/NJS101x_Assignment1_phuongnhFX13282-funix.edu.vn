@@ -4,3 +4,13 @@ h1 {
 
 .test {
   color: yellow; }
+.btn32{
+  background-color: green;
+}
+.chagavarta-but{
+  display: none;
+}
+.hoverchagavarta-but:hover .chagavarta-but {
+  display: block;
+  transition: all 0.5s ease-in-out;
+}

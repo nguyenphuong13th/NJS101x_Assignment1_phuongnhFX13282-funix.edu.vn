@@ -1,32 +1,30 @@
-{{#each employees}}
   <div class="card text-center bg-dark d-flex flex-column justify-content-center align-items-center" style="width: 18rem;height:18rem">
     <i class="fa-solid fa-house-laptop fs-1 mt-2 text-light"></i>
     <div class="card-body">
-      <a href="/user/{{this.name}}/check-in-out">Check In/Check Out</a>
+      <a href="/user/check-in-out">Check In/Check Out</a>
     </div>
   </div>
   <div class="card text-center bg-dark" style="width: 18rem;">
     <i class="fa-solid fa-user fs-1 mt-2 text-light"></i>
     <div class="card-body">
-      <a href="/user/{{this.name}}/personal-information">Thông tin Cá Nhân</a>
+      <a href="/user/personal-information">Thông tin Cá Nhân</a>
     </div>
   </div>
   <div class="card text-center bg-dark" style="width: 18rem;">
     <i class="fa-solid fa-user fs-1 mt-2 text-light"></i>
     <div class="card-body">
-      <a href="/user/{{this.name}}/day-off">Nghỉ Phép</a>
+      <a href="/user/day-off">Nghỉ Phép</a>
     </div>
   </div>
   <div class="card text-center bg-dark mt-5" style="width: 18rem;">
     <i class="fa-solid fa-clock fs-1 mt-2 text-light"></i>
     <div class="card-body">
-      <a href="/user/{{this.name}}/overtime-infomation">Tra Cứu Thông Tin Giờ Làm/Lương Tháng</a>
+      <a href="/user/overtime-infomation">Tra Cứu Thông Tin Giờ Làm/Lương Tháng</a>
     </div>
   </div>
   <div class="card text-center bg-dark mt-5" style="width: 18rem;height:18rem">
     <i class="fa-solid fa-clock fs-1 mt-2 text-light"></i>
     <div class="card-body">
-      <a href="/user/{{this.name}}/covid-information">Thông Tin Covid Cá Nhân</a>
+      <a href="/user/covid-information">Thông Tin Covid Cá Nhân</a>
     </div>
   </div>
-{{/each}}

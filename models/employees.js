@@ -22,11 +22,18 @@ const empolyee = new Schema({
     online: {
       onlinetext: { type: String, default: "working" },
       onlinecolor: { type: String, default: "green" },
+      checkinBut:{type:String}
     },
     offline: {
       offlinetext: { type: String, default: "Off-working" },
       offlinecolor: { type: String, default: "red" },
+      checkoutBut:{type:String,default:'disabled'}
     },
+  },
+  workingtimeandday:{
+      workingday:{type:Date},
+      workingtime:{type:Date},
+      offworking:{type:Date}
   },
   avartaimage: {
     type: String,
@@ -44,6 +51,9 @@ const empolyee = new Schema({
     coviddose2takedate:{type:Date},
     coviddose3type:{type:String},
     coviddose3takedate:{type:Date},
+  },
+  other:{
+    disablestatus:{type:String}
   }
 });
 

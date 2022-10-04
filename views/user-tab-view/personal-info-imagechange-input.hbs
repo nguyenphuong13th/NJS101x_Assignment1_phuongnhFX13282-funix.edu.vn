@@ -1,0 +1,16 @@
+<div class="container">
+    {{#each employees}}
+    <div class="row">
+        <div>
+            <form method="Post" action="/user/{{this._id}}/personalinfoImgUpdatedScreen?_method=PUT">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Please input your Avarta source here:</label>
+                    <input type="text" class="form-control" value="{{this.avartaimage}}" name="avartaimage">
+                    <input type="hidden" value="{{this._id}}" name="_id">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</div>

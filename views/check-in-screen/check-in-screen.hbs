@@ -27,21 +27,46 @@
               class="d-flex justify-content-around align-items-center"
               style="width:100%;"
             >
-              <button
-                type="button"
-                class="btn btn-success mt-3 text-align-center"
-                style="width:40%"
-              >Submit</button>
-              <button
-                type="button"
-                class="btn btn-success mt-3 text-align-center"
-                style="width:40%"
-              >Finish</button>
+              <form method="POST" style="width:40%" action="/user/{{this._id}}/check-in?_method=PUT">
+                <input type="hidden" value="{{this._id}}" name="_id">
+                <input type="hidden" value="green"
+                 name="onlinecolor">
+                <input type="hidden" value="working" name="onlinetext">
+                <input type="hidden" value="disabled" name="butoff">
+                <input type="hidden" value="enable" name="buton">
+                <input type="hidden" value="{{getdate}}" name="workingdayandtime">
+                <button
+                  type="submit"
+                  class="btn btn-success mt-3 text-align-center"
+                  {{this.workingstatus.online.checkinBut}}
+                >Working
+                </button>
+              </form>
+              <form method="POST" style="width:40%" action="/user/{{this._id}}/check-out?_method=PUT">
+                <input type="hidden" value="{{this._id}}" name="_id">
+                <input type="hidden" value="red"
+                 name="offlinecolor">
+                <input type="hidden" value="offline" name="offlinetext">
+                <input type="hidden" value="enable" name="buton">
+                <input type="hidden" value="disabled" name="butoff">
+                <input type="hidden" value="{{getdate}}" name="workingdayandtime">
+                <button
+                  type="submit"
+                  class="btn btn-success mt-3 text-align-center"
+                  {{this.workingstatus.offline.checkoutBut}}
+                >Finish
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <textarea class="check-in-out-infomation mt-2"></textarea>
+      <textarea class="check-in-out-infomation mt-2">
+        Day:{{dateconverter this.workingtimeandday.workingday}}
+        Check in Time:{{timeconverter this.workingtimeandday.workingtime}}
+        Check out Time : {{timeconverter this.workingtimeandday.offworking}}
+        Working time today(hour/day) :
+      </textarea>
     {{/each}}
   </div>
 </div>
