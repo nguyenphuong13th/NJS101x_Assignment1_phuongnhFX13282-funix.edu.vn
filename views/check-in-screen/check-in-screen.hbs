@@ -61,10 +61,13 @@
           </div>
         </div>
       </div>
+      <iframe src="https://free.timeanddate.com/clock/i8j98trl/n218/tlvn/fn6/ftb/pd2/tt0/tw1/tm1" frameborder="0" width="188" height="19" style="display:none"></iframe>
+      {{!-- using iframe to add clock to web --}}
       <textarea class="check-in-out-infomation mt-2">
-        Day:{{dateconverter this.workingtimeandday.workingday}}
-        Check in Time:{{timeconverter this.workingtimeandday.workingtime}}
-        Check out Time : {{timeconverter this.workingtimeandday.offworking}}
+
+        Day:{{dateconverter this.workingtimeandday.workingday.[1]}}
+        Check in Time:{{timeconverter this.workingtimeandday.workingtime.[{{this.workingtimeandday.workingtimes}}]}}
+        Check out Time : {{timeconverter this.workingtimeandday.offworking.[1]}}
         Working time today(hour/day) :
       </textarea>
     {{/each}}

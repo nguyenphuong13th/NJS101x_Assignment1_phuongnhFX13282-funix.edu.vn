@@ -2,6 +2,10 @@ const employees = require('../models/employees')
 const {multipleMongooseToObject} =require('../ultil/mongoose')
 const moment = require('moment')
 const { findOneAndUpdate, findById } = require('../models/employees')
+const DayTimeCheckinArray =[]
+const DayTimeCheckoutArray = []
+const DayTimeCheckinTimes = DayTimeCheckinArray.length
+const DayTimeCheckoutTimes= DayTimeCheckoutArray.length
 class UserController{
     //Get/user
     index(req,res){
@@ -18,14 +22,16 @@ class UserController{
     }
     //[Put]/user/check-in action
     checkinAction(req,res,next){
+        DayTimeCheckinArray.push(req.body.workingdayandtime)
         employees.findById(req.body._id)
         .then(employees=>{
             employees.workingstatus.offline.offlinecolor=req.body.onlinecolor
             employees.workingstatus.offline.offlinetext=req.body.onlinetext
             employees.workingstatus.online.checkinBut = req.body.butoff
             employees.workingstatus.offline.checkoutBut = req.body.buton
-            employees.workingtimeandday.workingday = req.body.workingdayandtime
-            employees.workingtimeandday.workingtime = req.body.workingdayandtime
+            employees.workingtimeandday.workingday = DayTimeCheckinArray
+            employees.workingtimeandday.workingtime = DayTimeCheckinArray
+            employees.workingtimeandday.workingtimes = DayTimeCheckinArray.length - 1
             employees.save()
             res.redirect('/user/check-in-out')
 
@@ -34,13 +40,15 @@ class UserController{
     }
     //[Put]/user/check-out action
     checkoutAction(req,res,next){
+        DayTimeCheckoutArray.push(req.body.workingdayandtime)
         employees.findById(req.body._id)
         .then(employees=>{
             employees.workingstatus.offline.offlinecolor=req.body.offlinecolor
             employees.workingstatus.offline.offlinetext=req.body.offlinetext
             employees.workingstatus.online.checkinBut = req.body.buton
             employees.workingstatus.offline.checkoutBut = req.body.butoff
-            employees.workingtimeandday.offworking = req.body.workingdayandtime
+            employees.workingtimeandday.offworking = DayTimeCheckoutArray
+            employees.workingtimeandday.ofworkingtimes = DayTimeCheckoutArray.length - 1
             employees.save()
             res.redirect('/user/check-in-out')
 

@@ -31,9 +31,11 @@ const empolyee = new Schema({
     },
   },
   workingtimeandday:{
-      workingday:{type:Date},
-      workingtime:{type:Date},
-      offworking:{type:Date}
+      workingday:[{type:Date}],
+      workingtime:[{type:Date}],
+      workingtimes:{type:Number},
+      offworking:[{type:Date}],
+      ofworkingtimes:{type:Number}
   },
   avartaimage: {
     type: String,
